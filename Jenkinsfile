@@ -33,12 +33,5 @@ pipeline {
             bat 'C:/Jenkinstest.bat'
                 }
             }
- 
-       post {
-       failure {mail to: 'neutralor@gmail.com',
-       subject: "Pipeline has failed: ${currentBuild.fullDisplayName}",
-       body: "Error in ${env.BUILD_URL}"
-       }
-    }
     }
 }
