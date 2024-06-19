@@ -6,7 +6,6 @@ pipeline {   /*declarative */
             bat 'C:/Jenkins/test.bat'
                 }
             }
-        }
         stage('Test') {
             steps {
             bat 'C:/Jenkins/test.bat'
@@ -22,5 +21,5 @@ pipeline {   /*declarative */
             bat 'C:/Jenkins/test.bat'
                 }
         }
-        
+    } 
 }
