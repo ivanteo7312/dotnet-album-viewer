@@ -1,28 +1,63 @@
-pipeline {   /*declarative */
+pipeline {  
+
     agent any
-    triggers{
-        cron('H/2 * * * *')
+
+    triggers {
+
+    cron('H/2 * * * *')
+
     }
+
     stages {
+
         stage('Build') {
+
             steps {
+
             bat 'C:/Jenkins/test.bat'
+
                 }
+
             }
-        stage('Test') {
+
+         stage('Test') {
+
             steps {
+
             bat 'C:/Jenkins/test.bat'
+
                 }
-        }
+
+            }
+
         stage('Package') {
+
             steps {
+
             bat 'C:/Jenkins/test.bat'
+
                 }
-        }
+
+            }
+
         stage('Deploy') {
+
             steps {
-            bat 'C:/Jenkins/test.bat'
+
+            bat 'C:/Jenkinstest.bat'
+
                 }
-        }
-    } 
+
+            }
+ 
+       post {
+
+       failure {mail to: 'ivanteo7312@gmail.com',
+
+       subject: "Pipeline has failed: ${currentBuild.fullDisplayName}",
+
+       body: "Error in ${env.BUILD_URL}"
+
+  }
+
 }
