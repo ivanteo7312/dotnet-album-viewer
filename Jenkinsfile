@@ -4,6 +4,15 @@ pipeline {
     cron('H/2 * * * *')
     }
     stages {
+
+        stage("Parallel"){
+            steps{
+                parallel{
+                    "Taskone" : {echo 'This is task one'},
+                        "Tasktwo" : {echo 'This is task two'}
+                }
+            }
+        }
         stage('Build') {
             steps {
             bat 'C:/Jenkins/test.bat'
