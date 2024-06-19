@@ -1,5 +1,8 @@
 pipeline {   /*declarative */
     agent any
+    triggers{
+        cron('H/2 * * * *')
+    }
     stages {
         stage('Build') {
             steps {
