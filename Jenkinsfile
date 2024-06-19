@@ -22,5 +22,5 @@ pipeline {   /*declarative */
             bat 'C:/Jenkins/test.bat'
                 }
         }
-    }    
+        
 }
