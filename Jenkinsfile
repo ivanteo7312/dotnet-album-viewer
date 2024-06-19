@@ -31,4 +31,5 @@ pipeline {
        body: "Error in ${env.BUILD_URL}"
        }
     }
+    }
 }
