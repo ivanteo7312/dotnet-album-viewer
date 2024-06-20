@@ -1,5 +1,5 @@
 pipeline {  
-    agent any
+    agent {lable 'Linux_Node2'}
     triggers {
     cron('H/2 * * * *')
     }
